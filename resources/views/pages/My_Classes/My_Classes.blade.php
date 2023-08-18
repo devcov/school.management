@@ -32,24 +32,24 @@
                 </div>
             @endif
 
-            <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal" style="border-radius: 30%">
                 {{ trans('My_Classes_trans.add_class') }}
             </button>
 
-                <button type="button" class="button x-small" id="btn_delete_all">
+                <button type="button" class="button x-small" id="btn_delete_all" style="border-radius: 30%">
                     {{ trans('My_Classes_trans.delete_checkbox') }}
                 </button>
 
 
             <br><br>
 
-                <form action="" method="POST">
+                <form action="{{ route('Filter_Classes') }}" method="POST" >
                     {{ csrf_field() }}
-                    <select class="selectpicker" data-style="btn-info" name="Grade_id" required
+                    <select class="selectpicker" data-style="btn-info" name="Grade_id" required style="border-radius: 30%"
                             onchange="this.form.submit()">
-                        <option value="" selected disabled>{{ trans('My_Classes_trans.Search_By_Grade') }}</option>
+                        <option value="" selected disabled >{{ trans('My_Classes_trans.Search_By_Grade') }}</option>
                         @foreach ($Grades as $Grade)
-                            <option value="{{ $Grade->id }}">{{ $Grade->Name }}</option>
+                            <option  value="{{ $Grade->id }}">{{ $Grade->Name }}</option>
                         @endforeach
                     </select>
                 </form>
@@ -367,6 +367,10 @@
     });
 
 </script>
+
+
+
+
 
 
 

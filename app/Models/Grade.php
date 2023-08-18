@@ -26,4 +26,11 @@ class Grade extends Model
         return $this->hasMany('App\Models\Section', 'Grade_id');
     }
 
+    // علاقة المراحل الدراسية لجلب الصفوف المتعلقة بكل مرحلة
+
+    public function Classroom()
+    {
+        return $this->hasMany('App\Models\Classroom', 'Grade_id');
+    }
+
 }

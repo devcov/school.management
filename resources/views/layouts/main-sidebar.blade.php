@@ -62,7 +62,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="chart" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="chart-js.html">Chart.js</a> </li>
+                            <li> <a href="{{route('Sections.index')}}">{{trans('main_trans.List_sections')}}</a> </li>
                             <li> <a href="chart-morris.html">Chart morris </a> </li>
                             <li> <a href="chart-sparkline.html">Chart Sparkline</a> </li>
                         </ul>
