@@ -83,6 +83,10 @@ Route::group(
     });
 
 
+     //==============================parents============================
+
+     Route::view('add_parent','livewire.show_Form');
+
 
 
     });

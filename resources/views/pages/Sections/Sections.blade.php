@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('css')
-    @toastr_css
+    
 @section('title')
     {{ trans('Sections_trans.title_page') }}
 @stop
@@ -334,7 +334,7 @@
                                             <label for="inputName"
                                                    class="control-label">{{ trans('Sections_trans.Name_Grade') }}</label>
                                             <select name="Grade_id" class="custom-select"
-                                                    onchange="console.log($(this).val())">
+                                                        onchange="console.log($(this).val())">
                                                 <!--placeholder-->
                                                 <option value="" selected
                                                         disabled>{{ trans('Sections_trans.Select_Grade') }}
@@ -385,6 +385,8 @@
         @section('js')
             @toastr_js
             @toastr_render
+
+            <!--code ajax get section of grade--->
             <script>
                 $(document).ready(function () {
                     $('select[name="Grade_id"]').on('change', function () {

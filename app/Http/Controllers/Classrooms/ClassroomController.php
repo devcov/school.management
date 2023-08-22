@@ -102,23 +102,24 @@ class ClassroomController extends Controller
   public function update(Request $request)
   {
 
-    try {
+    // try {
 
-        $Classrooms = Classroom::findOrFail($request->id);
+    //     $Classrooms = Classroom::findOrFail($request->id);
 
-        $Classrooms->update([
+    //     $Classrooms->update([
 
-            $Classrooms->Name_Class = ['ar' => $request->Name, 'en' => $request->Name_en],
-            $Classrooms->Grade_id = $request->Grade_id,
-        ]);
-        toastr()->success(trans('messages.Update'));
-        return redirect()->route('Classrooms.index');
-    }
+    //         $Classrooms->Name_Class = ['ar' => $request->Name, 'en' => $request->Name_en],
+    //         $Classrooms->Grade_id = $request->Grade_id,
+    //     ]);
+    //     toastr()->success(trans('messages.Update'));
+    //     return redirect()->route('Classrooms.index');
+    // }
 
-    catch
-    (\Exception $e) {
-        return redirect()->back()->withErrors(['error' => $e->getMessage()]);
-    }
+    // catch
+    // (\Exception $e) {
+    //     return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+    // }
+   return $request;
 
   }
 
