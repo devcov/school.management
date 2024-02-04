@@ -24,8 +24,8 @@ class StoreClassroom extends FormRequest
     public function rules()
     {
         return [
-            'List_Classes.*.Name' => 'required',
-            
+            'List_Classes.*.Name' => 'required'.$this->id,
+
             'List_Classes.*.Name_class_en' => 'required',
         ];
     }

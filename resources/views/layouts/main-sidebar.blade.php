@@ -93,14 +93,10 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Form" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="editor.html">Editor</a> </li>
+                            <li> <a href="{{route('Teachers.index')}}">{{trans('main_trans.List_Teachers')}}</a> </li>
                             <li> <a href="editor-markdown.html">Editor Markdown</a> </li>
                             <li> <a href="form-input.html">Form input</a> </li>
-                            <li> <a href="form-validation-jquery.html">form validation jquery</a> </li>
-                            <li> <a href="form-wizard.html">form wizard</a> </li>
-                            <li> <a href="form-repeater.html">form repeater</a> </li>
-                            <li> <a href="input-group.html">input group</a> </li>
-                            <li> <a href="toastr.html">toastr</a> </li>
+                            
                         </ul>
                     </li>
                     <!-- menu item table -->
@@ -112,7 +108,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="table" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="#">{{trans('main_trans.List_Parents')}}</a> </li>
+                            <li> <a href="{{ url('add_parent') }}">{{trans('main_trans.List_Parents')}}</a> </li>
                             <li> <a href="{{ url('add_parent') }}">{{trans('main_trans.Add_Parent')}}</a> </li>
                             <li> <a href="data-table.html">Data table</a> </li>
                         </ul>

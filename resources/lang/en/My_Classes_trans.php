@@ -9,7 +9,7 @@ return [
     'delete_class'=> 'Delete Class',
     'delete_checkbox'=> 'Delete Selected',
     'Search_By_Grade'=> 'Search By Grade Name',
-    'Warning_Grade'=> 'هل انت متاكد من عملية الحذف ؟',
+    'Warning_class'=> '     are you sure about delte ؟',
     'submit' => 'submit',
     'required_ar'=>'Please Enter The class Name in Arabic',
     'required_en'=>'Please Enter The class Name in English',
