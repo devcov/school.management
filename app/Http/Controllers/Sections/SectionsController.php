@@ -25,26 +25,17 @@ class SectionsController extends Controller
         // dd($Grades);
        // return $Grades;
         $list_Grades = Grade::all();
-         $teachers = Teacher::all();
+        $teachers = Teacher::all();
         return view('pages.Sections.Sections', compact('Grades', 'list_Grades','teachers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(StoreSections $request)
     {
         //
@@ -67,35 +58,20 @@ class SectionsController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Sections  $sections
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Section $sections)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Sections  $sections
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function edit(Section $sections)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Sections  $sections
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request)
     {
         //
@@ -116,11 +92,11 @@ class SectionsController extends Controller
 
 
             //  update pivot tABLE
-            // if (isset($request->teacher_id)) {
-            //     $Sections->teachers()->sync($request->teacher_id);
-            // } else {
-            //     $Sections->teachers()->sync(array());
-            // }
+            if (isset($request->teacher_id)) {
+                $Sections->teachers()->sync($request->teacher_id);
+            } else {
+                $Sections->teachers()->sync(array());
+            }
 
 
             $Sections->save();

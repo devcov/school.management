@@ -93,7 +93,7 @@
                 <label for="inputZip">{{ trans('Parent_trans.Religion_Father_id') }}</label>
                 <select class="custom-select my-1 mr-sm-2" wire:model="Religion_Mother_id">
                     <option selected>{{ trans('Parent_trans.Choose') }}...</option>
-                    @foreach ($Religions as $Religion)
+                    @foreach ($Religion as $Religion)
                         <option value="{{ $Religion->id }}">{{ $Religion->Name }}</option>
                     @endforeach
                 </select>

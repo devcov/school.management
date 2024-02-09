@@ -78,7 +78,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="font-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="fontawesome-icon.html">font Awesome</a> </li>
+                            <li> <a href="{{route('Students.create')}}">{{trans('main_trans.add_student')}}</a> </li>
+                            <li> <a href="{{route('Students.index')}}">{{trans('main_trans.list_students')}}</a></li>
                             <li> <a href="themify-icons.html">Themify icons</a> </li>
                             <li> <a href="weather-icon.html">Weather icons</a> </li>
                         </ul>
@@ -96,7 +97,7 @@
                             <li> <a href="{{route('Teachers.index')}}">{{trans('main_trans.List_Teachers')}}</a> </li>
                             <li> <a href="editor-markdown.html">Editor Markdown</a> </li>
                             <li> <a href="form-input.html">Form input</a> </li>
-                            
+
                         </ul>
                     </li>
                     <!-- menu item table -->
