@@ -146,8 +146,10 @@ class StudentRepository implements StudentRepositoryInterface{
     {
 
         Student::destroy($request->id);
+
         toastr()->error(trans('messages.Delete'));
         return redirect()->route('Students.index');
+
     }
 
     public function Upload_attachment($request)
@@ -158,7 +160,7 @@ class StudentRepository implements StudentRepositoryInterface{
             $file->storeAs('attachments/students/'.$request->student_name, $file->getClientOriginalName(),'upload_attachments');
 
             // insert in image_table
-            $images= new image();
+            $images= new Image();
             $images->filename=$name;
             $images->imageable_id = $request->student_id;
             $images->imageable_type = 'App\Models\Student';

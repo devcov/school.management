@@ -44,15 +44,18 @@ class StudentController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(StoreStudentsRequest $request, $id)
     {
         //
+        return $this->Student->Update_Student($request);
     }
 
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         //
+
+        return $this->Student->Delete_Student($request);
     }
 
     public function Get_classrooms($id)

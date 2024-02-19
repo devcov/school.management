@@ -9,13 +9,15 @@ use Spatie\Translatable\HasTranslations;
 
 class Student extends Authenticatable
 {
-    use SoftDeletes;
+    //use SoftDeletes;
 
     use HasTranslations;
     public $translatable = ['name'];
     protected $guarded =[];
 
-  
+
+
+
 
     // علاقة بين الطلاب والانواع لجلب اسم النوع في جدول الطلاب
 
