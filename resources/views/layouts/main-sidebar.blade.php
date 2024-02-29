@@ -79,7 +79,25 @@
                         </a>
                         <ul id="font-icon" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{route('Students.create')}}">{{trans('main_trans.add_student')}}</a> </li>
+
+
                             <li> <a href="{{route('Students.index')}}">{{trans('main_trans.list_students')}}</a></li>
+
+
+
+                            <li>
+                                <a href="javascript:void(0);" data-toggle="collapse" data-target="#Students_upgrade">{{trans('main_trans.Students_Promotions')}}<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
+                                <ul id="Students_upgrade" class="collapse">
+                                    <li> <a href="{{route('Promotion.index')}}">{{trans('main_trans.add_Promotion')}}</a></li>
+                                    <li> <a href="{{route('Promotion.create')}}">{{trans('main_trans.list_Promotions')}}</a> </li>
+                                </ul>
+                            </li>
+
+
+
+
+
+
                             <li> <a href="themify-icons.html">Themify icons</a> </li>
                             <li> <a href="weather-icon.html">Weather icons</a> </li>
                         </ul>

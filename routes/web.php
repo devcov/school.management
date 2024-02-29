@@ -87,7 +87,11 @@ Route::group(
 
           //==============================Students============================
     Route::group(['namespace' => 'Students'], function () {
+
+
         Route::resource('Students', 'StudentController');
+
+        
         Route::get('/indirect', 'OnlineClasseController@indirectCreate')->name('indirect.create');
         Route::post('/indirect', 'OnlineClasseController@storeIndirect')->name('indirect.store');
 
@@ -104,7 +108,7 @@ Route::group(
 
         Route::resource('Payment_students', 'PaymentController');
         Route::resource('Attendance', 'AttendanceController');
-        
+
         Route::get('download_file/{filename}', 'LibraryController@downloadAttachment')->name('downloadAttachment');
         Route::resource('library', 'LibraryController');
 
