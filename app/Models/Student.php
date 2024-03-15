@@ -9,7 +9,7 @@ use Spatie\Translatable\HasTranslations;
 
 class Student extends Authenticatable
 {
-    //use SoftDeletes;
+    use SoftDeletes;
 
     use HasTranslations;
     public $translatable = ['name'];

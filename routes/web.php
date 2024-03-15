@@ -97,10 +97,12 @@ Route::group(
 
         Route::resource('online_classes', 'OnlineClasseController');
 
-        Route::resource('Graduated', 'GraduatedController');
 
-        
+
+
         Route::resource('Promotion', 'PromotionController');
+
+        Route::resource('Graduated', 'GraduatedController');
 
         Route::resource('Fees_Invoices', 'FeesInvoicesController');
         Route::resource('Fees', 'FeesController');
