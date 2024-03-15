@@ -91,13 +91,15 @@ Route::group(
 
         Route::resource('Students', 'StudentController');
 
-        
+
         Route::get('/indirect', 'OnlineClasseController@indirectCreate')->name('indirect.create');
         Route::post('/indirect', 'OnlineClasseController@storeIndirect')->name('indirect.store');
 
         Route::resource('online_classes', 'OnlineClasseController');
 
         Route::resource('Graduated', 'GraduatedController');
+
+        
         Route::resource('Promotion', 'PromotionController');
 
         Route::resource('Fees_Invoices', 'FeesInvoicesController');
