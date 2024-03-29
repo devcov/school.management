@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateGradsTable extends Migration {
 
@@ -11,7 +12,7 @@ class CreateGradsTable extends Migration {
 			$table->id();
 			$table->timestamps();
 			$table->string('Name');
-			$table->longText('Notes');
+			$table->longText('Notes')->nullable();
 		});
 	}
 
