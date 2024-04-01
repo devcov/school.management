@@ -23,4 +23,6 @@ class Classroom extends Model
         return $this->belongsTo('App\Models\Grade','Grade_id','id');
     }
 
+   
+
 }

@@ -129,6 +129,30 @@ Route::group(
 
 
 
+     //==============================subjects============================
+     Route::group(['namespace' => 'Subjects'], function () {
+        Route::resource('subjects', 'SubjectController');
+    });
+
+
+
+      //==============================Quizzes============================
+      Route::group(['namespace' => 'Quizzes'], function () {
+        Route::resource('Quizzes', 'QuizzController');
+    });
+
+
+     //==============================questions============================
+     Route::group(['namespace' => 'questions'], function () {
+        Route::resource('questions', 'QuestionController');
+    });
+
+
+
+
+
+
+
 
 
 

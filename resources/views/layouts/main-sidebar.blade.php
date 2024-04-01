@@ -184,7 +184,7 @@
 
 
 
-                    
+
                     <!-- Accounts-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Accounts-menu">
@@ -201,70 +201,56 @@
                             <li> <a href="{{ route('Payment_students.index') }}">سندت الصرف</a> </li>
                         </ul>
                     </li>
-                    <!-- menu item Authentication-->
+                    <!-- Attendance-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#authentication">
-                            <div class="pull-left"><i class="ti-id-badge"></i><span
-                                    class="right-nav-text">{{ trans('main_trans.Attendance') }}</span></div>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Attendance-icon">
+                            <div class="pull-left"><i class="fas fa-calendar-alt"></i><span class="right-nav-text">{{trans('main_trans.Attendance')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="authentication" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="login.html">login</a> </li>
-                            <li> <a href="register.html">register</a> </li>
-                            <li> <a href="lockscreen.html">Lock screen</a> </li>
+                        <ul id="Attendance-icon" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('Attendance.index')}}">قائمة الطلاب</a> </li>
                         </ul>
                     </li>
 
 
+                     <!-- Subjects-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Subjects">
+                            <div class="pull-left"><i class="fas fa-book-open"></i><span class="right-nav-text">المواد الدراسية</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="Subjects" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('subjects.index')}}">قائمة المواد</a> </li>
+                        </ul>
+                    </li>
+
+
+                    <!-- Quizzes-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Exams-icon">
+                            <div class="pull-left"><i class="fas fa-book-open"></i><span class="right-nav-text">الاختبارات</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="Exams-icon" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('Quizzes.index')}}">قائمة الاختبارات</a> </li>
+                            <li> <a href="{{route('questions.index')}}">قائمة الاسئلة</a> </li>
+                        </ul>
+                    </li>
                     <!---->
-                    <!-- menu item Authentication-->
+                       <!-- Online classes-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#authentication">
-                            <div class="pull-left"><i class="ti-id-badge"></i><span
-                                    class="right-nav-text">{{ trans('main_trans.Exams') }}</span></div>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Onlineclasses-icon">
+                            <div class="pull-left"><i class="fas fa-video"></i><span class="right-nav-text">{{trans('main_trans.Onlineclasses')}}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="authentication" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="login.html">login</a> </li>
-                            <li> <a href="register.html">register</a> </li>
-                            <li> <a href="lockscreen.html">Lock screen</a> </li>
+                        <ul id="Onlineclasses-icon" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="#">حصص اونلاين مع زوم</a> </li>
                         </ul>
                     </li>
-
-                    <!---->
-                    <!-- menu item Authentication-->
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#authentication">
-                            <div class="pull-left"><i class="ti-id-badge"></i><span
-                                    class="right-nav-text">{{ trans('main_trans.library') }}</span></div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-                        <ul id="authentication" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="login.html">login</a> </li>
-                            <li> <a href="register.html">register</a> </li>
-                            <li> <a href="lockscreen.html">Lock screen</a> </li>
-                        </ul>
-                    </li>
-
-                    <!---->
-                    <!-- menu item Authentication-->
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#authentication">
-                            <div class="pull-left"><i class="ti-id-badge"></i><span
-                                    class="right-nav-text">{{ trans('main_trans.Onlineclasses') }}</span></div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-                        <ul id="authentication" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="login.html">login</a> </li>
-                            <li> <a href="register.html">register</a> </li>
-                            <li> <a href="lockscreen.html">Lock screen</a> </li>
-                        </ul>
-                    </li>
-
                     <!---->
                     <!-- menu item Authentication-->
                     <li>
