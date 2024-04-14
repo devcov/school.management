@@ -3,9 +3,10 @@
         <nav class="admin-header navbar navbar-default col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <!-- logo -->
             <div class="text-left navbar-brand-wrapper">
-                <a class="navbar-brand brand-logo" href="index.html"><img src="{{ URL::asset('assets/images/logo-dark.png') }}" alt=""></a>
-                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ URL::asset('assets/images/logo-icon-dark.png') }}"
-                        alt=""></a>
+                <a class="navbar-brand brand-logo" href="index.html"><img
+                        src="{{ URL::asset('assets/images/logo-dark.png') }}" alt=""></a>
+                <a class="navbar-brand brand-logo-mini" href="index.html"><img
+                        src="{{ URL::asset('assets/images/logo-icon-dark.png') }}" alt=""></a>
             </div>
             <!-- Top bar left -->
             <ul class="nav navbar-nav mr-auto">
@@ -19,7 +20,8 @@
                         <div class="search-box not-click">
                             <input type="text" class="not-click form-control" placeholder="Search" value=""
                                 name="search">
-                            <button class="search-button" type="submit"> <i class="fa fa-search not-click"></i></button>
+                            <button class="search-button" type="submit"> <i
+                                    class="fa fa-search not-click"></i></button>
                         </div>
                     </div>
                 </li>
@@ -31,32 +33,32 @@
 
 
 
-            <li class="nav-item dropdown ">
-                <a class="nav-link top-nav" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">
+                <li class="nav-item dropdown ">
+                    <a class="nav-link top-nav" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">
 
-                    <i class="ti-palette"></i>
-
-
-                    <span class="badge badge-danger notification-status"> </span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right dropdown-big dropdown-notifications">
-                    <div class="dropdown-header notifications">
-                        <strong>lang</strong>
-
-                    </div>
-                    <div class="dropdown-divider"></div>
+                        <i class="ti-palette"></i>
 
 
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                            <a rel="alternate" class="dropdown-item" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                        <span class="badge badge-danger notification-status"> </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-big dropdown-notifications">
+                        <div class="dropdown-header notifications">
+                            <strong>lang</strong>
+
+                        </div>
+                        <div class="dropdown-divider"></div>
+
+
+                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            <a rel="alternate" class="dropdown-item" hreflang="{{ $localeCode }}"
+                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                 {{ $properties['native'] }}
                             </a>
+                        @endforeach
 
-                            @endforeach
-
-                </div>
-            </li>
+                    </div>
+                </li>
 
 
 
@@ -68,8 +70,8 @@
                 </li>
 
                 <li class="nav-item dropdown ">
-                    <a class="nav-link top-nav" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                        aria-expanded="false">
+                    <a class="nav-link top-nav" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">
                         <i class="ti-bell"></i>
                         <span class="badge badge-danger notification-status"> </span>
                     </a>
@@ -85,9 +87,11 @@
                                 class="float-right text-muted time">22 mins</small> </a>
                         <a href="#" class="dropdown-item">Server error report<small
                                 class="float-right text-muted time">7 hrs</small> </a>
-                        <a href="#" class="dropdown-item">Database report<small class="float-right text-muted time">1
+                        <a href="#" class="dropdown-item">Database report<small
+                                class="float-right text-muted time">1
                                 days</small> </a>
-                        <a href="#" class="dropdown-item">Order confirmation<small class="float-right text-muted time">2
+                        <a href="#" class="dropdown-item">Order confirmation<small
+                                class="float-right text-muted time">2
                                 days</small> </a>
                     </div>
                 </li>
@@ -98,8 +102,8 @@
 
 
                 <li class="nav-item dropdown ">
-                    <a class="nav-link top-nav" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                        aria-expanded="true"> <i class=" ti-view-grid"></i> </a>
+                    <a class="nav-link top-nav" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="true"> <i class=" ti-view-grid"></i> </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-big">
                         <div class="dropdown-header">
                             <strong>Quick Links</strong>
@@ -148,11 +152,20 @@
                         <a class="dropdown-item" href="#"><i class="text-info ti-settings"></i>Settings</a>
                         <a class="dropdown-item" href="#"><i class="text-danger ti-unlock"></i>Logout</a>
 
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="text-danger ti-unlock"></i><i
-                        class="bx bx-log-out"></i>تسجيل خروج</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @if (auth('student')->check())
+                            <form method="GET" action="{{ route('logout', 'student') }}">
+                            @elseif(auth('teacher')->check())
+                                <form method="GET" action="{{ route('logout', 'teacher') }}">
+                                @elseif(auth('parent')->check())
+                                    <form method="GET" action="{{ route('logout', 'parent') }}">
+                                    @else
+                                        <form method="GET" action="{{ route('logout', 'web') }}">
+                        @endif
+
                         @csrf
+                        <a class="dropdown-item" href="#"
+                            onclick="event.preventDefault();this.closest('form').submit();"><i
+                                class="bx bx-log-out"></i>تسجيل الخروج</a>
                         </form>
 
                     </div>
