@@ -223,15 +223,15 @@ Route::group(
 
     Route::group(['namespace' => 'Sections'], function () {
 
-        Route::resource('Sections', 'SectionController');
+        Route::resource('Sections', 'SectionsController');
 
-        Route::get('/classes/{id}', 'SectionController@getclasses');
+        Route::get('/classes/{id}', 'SectionsController@getclasses');
 
     });
 
     //==============================parents============================
 
-         Route::view('add_parent','livewire.show_Form');
+         Route::view('add_parent','livewire.show_Form')->name('add_parent');
 
     //==============================Teachers============================
     Route::group(['namespace' => 'Teachers'], function () {

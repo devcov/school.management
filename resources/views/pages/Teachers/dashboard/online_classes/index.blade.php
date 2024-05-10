@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('css')
-
+   
 @section('title')
     حصص اونلاين
 @stop
@@ -21,8 +21,8 @@
                     <div class="col-xl-12 mb-30">
                         <div class="card card-statistics h-100">
                             <div class="card-body">
-                                <a href="{{route('online_classes.create')}}" class="btn btn-success" role="button" aria-pressed="true">اضافة حصة اونلاين جديدة</a>
-                                <a class="btn btn-warning" href="{{route('indirect.create')}}">اضافة حصة اوفلاين جديدة</a>
+                                <a href="{{route('online_zoom_classes.create')}}" class="btn btn-success" role="button" aria-pressed="true">اضافة حصة اونلاين جديدة</a>
+                                <a class="btn btn-warning" href="{{route('indirect.teacher.create')}}">اضافة حصة اوفلاين جديدة</a>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
                                            data-page-length="50"
@@ -48,7 +48,7 @@
                                             <td>{{$online_classe->grade->Name}}</td>
                                             <td>{{ $online_classe->classroom->Name_Class }}</td>
                                             <td>{{$online_classe->section->Name_Section}}</td>
-                                            <td>{{$online_classe->created_by}}</td>php
+                                                <td>{{$online_classe->created_by}}</td>
                                                 <td>{{$online_classe->topic}}</td>
                                                 <td>{{$online_classe->start_at}}</td>
                                                 <td>{{$online_classe->duration}}</td>
@@ -57,7 +57,7 @@
                                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#Delete_receipt{{$online_classe->meeting_id}}" ><i class="fa fa-trash"></i></button>
                                                 </td>
                                             </tr>
-                                        @include('pages.online_classes.delete')
+                                        @include('pages.Teachers.dashboard.online_classes.delete')
                                         @endforeach
                                     </table>
                                 </div>
