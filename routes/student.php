@@ -28,4 +28,9 @@ Route::group(
         return view('pages.Students.dashboard');
     });
 
+
+    Route::group(['namespace' => 'Students\dashboard'], function () {
+        Route::resource('student_exams', 'ExamsController');
+    });
+
 });
